@@ -1,6 +1,11 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
+import About from './Pages/About';
+import Goals from './Pages/Goals';
+import SignUp from './Pages/SignUp';
+import Completed from './Pages/Completed';
+import InProgress from './Pages/InProgress';
 
 let Router = () =>
     <HashRouter>
@@ -13,3 +18,5 @@ let Router = () =>
             <Route exact path="/inprogress" component={InProgress} />
         </Switch>
     </HashRouter>
+
+export default Router;
