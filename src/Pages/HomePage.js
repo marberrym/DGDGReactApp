@@ -1,7 +1,7 @@
 import React from 'react';
-import HeadLogo from './HeadLogo';
-import HeadCaption from './HeadCaption';
-import NavBar from './NavBar';
+import HeadLogo from '../PageComponents/HeadLogo';
+import HeadCaption from '../PageComponents/HeadCaption';
+import NavBar from '../PageComponents/NavBar';
 
 let HomePage = (props) => 
     <div>
