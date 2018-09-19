@@ -1,9 +1,16 @@
-body {
+:root {
+  --bg-color: radial-gradient(circle, rgba(246,249,213,1) 0%, rgba(192,231,169,1) 82%);
+  --logo-text: 'Permanent Marker', cursive;
+  --subhead-text: 'Anton', sans-serif;
+  --other-text: 'Philosopher', sans-serif;
+}
+
+html body {
   margin: 0;
   padding: 0;
   height: 100%; 
   width: 100%;
-  background: radial-gradient(circle, rgba(246,249,213,1) 0%, rgba(192,231,169,1) 82%);
+  background: var(--bg-color);
 }
 
 .navbar {
@@ -27,6 +34,11 @@ body {
   display: flex;
 }
 
+.center {
+  justify-content: center;
+  align-items:center;
+}
+
 .head {
   display: flex;
   align-items: center;
@@ -39,7 +51,7 @@ body {
 }
 
 .header {
-  font-family: 'Permanent Marker', cursive;
+  font-family: var(--logo-text);
   font-size: 5em;
   color: azure;
   transform: translateY(30%);
@@ -53,7 +65,7 @@ body {
 
 .subHead {
   margin-top: 1em;
-  font-family: 'Anton', sans-serif;
+  font-family: var(--subhead-text);
   font-size: 1.3em;
   color: black;
   text-transform: uppercase;
@@ -90,7 +102,22 @@ body {
   }
 }
 
+.signupForm {
+  width: 20em;
+  position: fixed;
+  top: 30%;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: var(--bg-color);
+}
 
+.labeltext {
+  font-family: var(--other-text);
+
+}
 
 .flip {
   transform: scaleX(-1) translateY(30%);

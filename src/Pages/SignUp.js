@@ -9,6 +9,7 @@ class SignUp extends Component {
             lastname: '',
             username: '',
             password: '',
+            pwverify: '',
             email: '',
         }
     }
