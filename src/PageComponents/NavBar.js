@@ -10,7 +10,7 @@ let NavBar = () =>
         </div>
         <div className="flexRow">
             <Link to="/signup" className="navLink">Sign Up</Link>
-            <div className="navLink">Log In</div>
+            <Link to="/login" className="navLink">Log In</Link>
         </div>
     </div>
 
