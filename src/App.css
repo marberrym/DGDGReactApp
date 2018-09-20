@@ -102,21 +102,58 @@ html body {
   }
 }
 
-.signupForm {
+.formflex {
   width: 20em;
   position: fixed;
-  top: 30%;
+  top: 40%;
   height: 20em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  background: var(--bg-color);
+  justify-content: center;
+  background-color: rgba(245, 245, 245, 0.705);
+  border-radius: .5em;
+  border: 1px solid black;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.664);
 }
 
 .labeltext {
   font-family: var(--other-text);
+}
 
+label {
+  margin-top: 1.5em;
+}
+
+button {
+  margin-top: 1.5em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: .5em;
+  color: whitesmoke;
+  background-color: rgb(6, 155, 43);
+  border: 1px solid black;
+  font-family: var(--other-text);
+  transition: .2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  color: green;
+  border: 1px solid green;
+  background-color: whitesmoke;
+}
+
+button:active {
+  box-shadow: none;
+  outline: none;
+}
+
+button:focus {
+  box-shadow: none;
+  outline: none;
 }
 
 .flip {

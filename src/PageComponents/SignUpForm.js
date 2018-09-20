@@ -1,13 +1,25 @@
 import React from 'react';
 import NavBar from './NavBar';
+import HeadLogo from './HeadLogo';
+import HeadCaption from './HeadCaption';
 
 let SignUpForm = (props) => {
     return <div>
         <NavBar/>
+        <HeadLogo/>
+        <HeadCaption/>
         <div className="flexRow center">
-            <form className="signupForm labeltext">
+            <form className="formflex labeltext" onSubmit={(event) => {
+                    event.preventDefault();
+                    Object.keys(props).forEach(prop => {
+                        console.log(prop);
+                        if (prop !== 'update') {
+                            props.update(prop, '');
+                        }
+                    })
+                }
+            }>
                 <label>
-                    {console.log(props)}
                     First Name: <input type="text"  value={props.firstname} onChange={(event) => 
                         props.update('firstname', event.target.value)} required/>
                 </label>
@@ -31,9 +43,7 @@ let SignUpForm = (props) => {
                     Confirm Password: <input type="password" value={props.pwverify} onChange={(event) => 
                         props.update('pwverify', event.target.value)} required/>
                 </label>
-                <button onSubmit={(event) =>
-                    event.preventDefault()
-                }>Submit</button>
+                <button>Sign Up</button>
             </form>
         </div>
         
