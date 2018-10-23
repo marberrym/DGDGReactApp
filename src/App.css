@@ -1,5 +1,6 @@
 :root {
-  --bg-color: radial-gradient(circle, rgba(246,249,213,1) 0%, rgba(192,231,169,1) 82%);
+  /* --bg-color: radial-gradient(circle, rgba(246,249,213,1) 0%, rgba(192,231,169,1) 82%); */
+  --bg-color: rgb(227, 250, 213);
   --logo-text: 'Permanent Marker', cursive;
   --subhead-text: 'Anton', sans-serif;
   --other-text: 'Philosopher', sans-serif;
@@ -13,93 +14,13 @@ html body {
   background: var(--bg-color);
 }
 
-.navbar {
-  position: fixed;
-  width: 100%;
-  height: 2.5em;
-  background-color: whitesmoke;
-  border-bottom: 1px solid black;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navLink {
-  margin-left: 1.5em;
-  margin-right: 1.5em;
-}
-
-.flexRow {
-  display: flex;
-}
-
 .center {
   justify-content: center;
   align-items:center;
 }
 
-.head {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
 .column {
   flex-direction: column;
-}
-
-.header {
-  font-family: var(--logo-text);
-  font-size: 5em;
-  color: azure;
-  transform: translateY(30%);
-  text-shadow:
-      -3px -3px 0 black,
-      2px -2px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black;
-  letter-spacing: .01em;
-}
-
-.subHead {
-  margin-top: 1em;
-  font-family: var(--subhead-text);
-  font-size: 1.3em;
-  color: black;
-  text-transform: uppercase;
-}
-
-
-
-.dg1 {
-  text-transform: uppercase;
-  margin-left: .5em;
-  animation: grow 4s infinite;
-}
-
-.dg2 {
-  /* font-size: 1.7em; */
-  text-transform: uppercase;
-  margin-left: .5em;
-  animation: grow 4s 1.33s infinite;
-}
-.dg3 {
-  animation: grow 4s 2.66s infinite;
-  margin-left: .5em;
-}
-
-@keyframes grow {
-  5% {
-      transform: scale(1) translateY(0);
-  }
-  25% {
-      transform: scale(1.2) translateY(-20%);
- }
-  45% {
-      transform: scale(1) translateY(0);
-  }
 }
 
 .formflex {
@@ -156,13 +77,3 @@ button:focus {
   outline: none;
 }
 
-.flip {
-  transform: scaleX(-1) translateY(30%);
-  
-}
-
-.headIMG {
-  z-index: -1;
-  height: 10em;
-  margin-top: 4em;
-}
