@@ -13,6 +13,7 @@ const protect = expressJwt({
 const signup = require('./routes/signup');
 const login = require('./routes/login');
 const validate = require('./routes/validate');
+const newGoal = require('./routes/newGoal');
 
 app.use(bodyParser.json());
 app.use(allowCORS);
@@ -22,6 +23,9 @@ app.post('/signup', signup);
 
 //login route
 app.post('/login', login);
+
+//post new goal
+app.post('/goal', protect, newGoal)
 
 //validate existing token
 app.get('/validate', validate);

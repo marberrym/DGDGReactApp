@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './navBar.css';
 import { connect } from 'react-redux';
 import url from '../globalURL';
+import windowSize from '../windowSize';
 
 let NavBar = (props) =>
     <div className="navbar">
@@ -29,5 +30,5 @@ let NavBar = (props) =>
         }
     </div>
 
-let NavBarSmart = connect(state => ({user: state.user}))(NavBar)
+let NavBarSmart = connect(state => ({user: state.user}))(windowSize(NavBar))
 export default NavBarSmart;

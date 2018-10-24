@@ -2,6 +2,7 @@ import React from 'react';
 import HeadLogo from '../PageComponents/HeadLogo';
 import NavBar from '../PageComponents/NavBar';
 import { connect } from 'react-redux'; 
+import { Link } from 'react-router-dom';
 
 let HomePage = (props) => 
     <div>
@@ -12,14 +13,13 @@ let HomePage = (props) =>
                 <div className="buttonContainer">
                     <button className="btn">Completed</button>
                     <button className="btn">Check-in</button>
-                    <button className="btn">New Goal</button>
+                    <Link to="/newgoal"><button className="btn">New Goal</button></Link>
                 </div>
                 <div>Welcome Back {props.user.username}</div>
             </div>
         :
             null
         }
-        
     </div>
 
 
