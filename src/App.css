@@ -1,8 +1,12 @@
 :root {
-  --bg-color: radial-gradient(circle, rgba(246,249,213,1) 0%, rgba(192,231,169,1) 82%);
+  /* --bg-color: radial-gradient(circle, rgba(246,249,213,1) 0%, rgba(192,231,169,1) 82%); */
+  --bg-color: rgb(237, 252, 228);
   --logo-text: 'Permanent Marker', cursive;
   --subhead-text: 'Anton', sans-serif;
   --other-text: 'Philosopher', sans-serif;
+  --border-black: rgba(0, 0, 0, 0.308);
+  --box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.34);
+  --box-bg: rgba(245, 245, 245, 0.705);
 }
 
 html body {
@@ -11,158 +15,72 @@ html body {
   height: 100%; 
   width: 100%;
   background: var(--bg-color);
+  font-family: var(--other-text);
 }
 
-.navbar {
-  position: fixed;
-  width: 100%;
-  height: 2.5em;
-  background-color: whitesmoke;
-  border-bottom: 1px solid black;
-  top: 0;
+.aboutBox {
+  max-width: 35em;
+  font-size: 1.1em;
+  padding: 1em;
+  margin: 1em;
+  margin-top: 3em;
+  border-radius: 4px;
+  border: 1px solid var(--border-black);
+  box-shadow: var(--box-shadow);
+  background-color: var(--box-bg);
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.pageLayout {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navLink {
-  margin-left: 1.5em;
-  margin-right: 1.5em;
-}
-
-.flexRow {
-  display: flex;
-}
-
-.center {
-  justify-content: center;
-  align-items:center;
-}
-
-.head {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.column {
   flex-direction: column;
-}
-
-.header {
-  font-family: var(--logo-text);
-  font-size: 5em;
-  color: azure;
-  transform: translateY(30%);
-  text-shadow:
-      -3px -3px 0 black,
-      2px -2px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black;
-  letter-spacing: .01em;
-}
-
-.subHead {
-  margin-top: 1em;
-  font-family: var(--subhead-text);
-  font-size: 1.3em;
-  color: black;
-  text-transform: uppercase;
-}
-
-
-
-.dg1 {
-  text-transform: uppercase;
-  margin-left: .5em;
-  animation: grow 4s infinite;
-}
-
-.dg2 {
-  /* font-size: 1.7em; */
-  text-transform: uppercase;
-  margin-left: .5em;
-  animation: grow 4s 1.33s infinite;
-}
-.dg3 {
-  animation: grow 4s 2.66s infinite;
-  margin-left: .5em;
-}
-
-@keyframes grow {
-  5% {
-      transform: scale(1) translateY(0);
-  }
-  25% {
-      transform: scale(1.2) translateY(-20%);
- }
-  45% {
-      transform: scale(1) translateY(0);
-  }
+  justify-items: center;
+  align-items: center;
 }
 
 .formflex {
   width: 20em;
-  position: fixed;
-  top: 40%;
-  height: 20em;
   display: flex;
+  margin-top: 3em;
+  padding: 2em;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(245, 245, 245, 0.705);
-  border-radius: .5em;
-  border: 1px solid black;
-  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.664);
+  background-color: var(--box-bg);
+  border-radius: 4px;
+  border: 1px solid var(--border-black);
+  box-shadow: var(--box-shadow);
 }
 
-.labeltext {
+input {
+  height: 2em;
+  width: 12em;
+  margin-left: .5em;
+  border-radius: 2px;
   font-family: var(--other-text);
+  border: 1px solid var(--border-black);
+  margin-bottom: 2em;
 }
 
-label {
-  margin-top: 1.5em;
-}
-
-button {
-  margin-top: 1.5em;
-  padding-top: .5em;
-  padding-bottom: .5em;
-  padding-left: 2em;
-  padding-right: 2em;
-  border-radius: .5em;
-  color: whitesmoke;
-  background-color: rgb(6, 155, 43);
-  border: 1px solid black;
+.btn {
+  width: 7em;
+  height: 2.5em;
+  border-radius: 2px;
+  color: rgb(6,155,43);
+  background-color: var(--box-bg);
+  border: 1px solid var(--border-black);
   font-family: var(--other-text);
   transition: .2s ease-in-out;
 }
 
-button:hover {
-  transform: scale(1.1);
-  color: green;
-  border: 1px solid green;
-  background-color: whitesmoke;
+.btn:hover {
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgb(6,155,43);
 }
 
-button:active {
+input:active, input:focus, .btn:active, .btn:focus {
   box-shadow: none;
   outline: none;
 }
 
-button:focus {
-  box-shadow: none;
-  outline: none;
-}
-
-.flip {
-  transform: scaleX(-1) translateY(30%);
-  
-}
-
-.headIMG {
-  z-index: -1;
-  height: 10em;
-  margin-top: 4em;
-}
