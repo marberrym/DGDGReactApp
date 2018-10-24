@@ -10,7 +10,16 @@ const protect = expressJwt({
     getToken: (req) => req.headers.token
 });
 
+const signup = require('./routes/signup');
+const validate = require('./routes/validate')
+
 app.use(bodyParser.json());
 app.use(allowCORS);
+
+//signup route
+app.post('/signup', signup);
+
+//validation
+app.get('/validate', validate);
 
 app.listen(5000)

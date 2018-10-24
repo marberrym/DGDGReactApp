@@ -20,7 +20,6 @@
 
   .flip {
     transform: scaleX(-1) translateY(30%);
-    
   }
   
   .headIMG {
@@ -33,7 +32,7 @@
     margin-top: 1em;
     font-family: var(--subhead-text);
     font-size: 1.3em;
-    color: black;
+    color: transparent;
     text-transform: uppercase;
   }
 
@@ -44,7 +43,6 @@
   }
   
   .dg2 {
-    /* font-size: 1.7em; */
     text-transform: uppercase;
     margin-left: .5em;
     animation: grow 4s 1.33s infinite;
@@ -57,12 +55,17 @@
   @keyframes grow {
     5% {
         transform: scale(1) translateY(0);
+        color: transparent;
     }
     25% {
         transform: scale(1.2) translateY(-20%);
+        color: black;
    }
     45% {
         transform: scale(1) translateY(0);
+    }
+    55% {
+        color: transparent;
     }
   }
 

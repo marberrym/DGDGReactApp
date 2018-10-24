@@ -1,3 +1,5 @@
-let initialState = {};
+let initialState = {
+    user: {},
+};
 
 export default initialState;

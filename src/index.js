@@ -8,6 +8,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducer';
 import initialState from './initialState';
+import inject from './inject';
 
 
 
@@ -18,7 +19,9 @@ let store = createStore(
 )
 
 let app = <Provider store={store}>
-    <Router />
+    <Router>
+        <App></App>
+    </Router>
 </Provider>
 
 

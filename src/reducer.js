@@ -1,5 +1,7 @@
+let assignUser = (oldState, action) => ({...oldState, user: action.data})
+
 let actionRouter = {
-    
+    "ASSIGN_USER": assignUser
 }
 
 let reducer = (oldState, action) => {
