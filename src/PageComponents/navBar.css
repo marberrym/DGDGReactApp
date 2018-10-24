@@ -29,6 +29,46 @@
     cursor: pointer;
   }
 
+.slideMenu {
+  background-color: var(--box-bg);
+  border: 1px solid var(--border-black);
+  position: absolute;
+  right: 0;
+  top: 2.5em;
+  height: 7em;
+  width: 7em;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  animation: .3s ease-in-out reverse slidedown
+}
+
+.slideItem {
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: .3s ease-in-out;
+}
+
+.slideItem:hover {
+  color: whitesmoke;
+  font-size: 1.05em;
+  background-color: rgba(0, 0, 0, 0.645);
+}
+
+@keyframes slidedown {
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
 .navBars {
   opacity: .4;
 }

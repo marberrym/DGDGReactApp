@@ -9,6 +9,7 @@
     "moment": "^2.22.2",
     "pg-promise": "^8.5.1",
     "react": "^16.5.1",
+    "react-click-outside": "^3.0.1",
     "react-dom": "^16.5.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",

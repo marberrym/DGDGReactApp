@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './navBar.css';
 import { connect } from 'react-redux';
-import url from '../globalURL';
 import windowSize from '../windowSize';
+import BurgerNav from './BurgerNav';
 
 let NavBar = (props) =>
     <div className="navbar">
@@ -26,12 +26,7 @@ let NavBar = (props) =>
                     }}>Log Out</div>
                 </div>
             :
-                <div className="navLinkGroup">
-                    <div className="avatarBox">
-                        <Link to='/goals'><img className="navBarLogo navBarAvatar" src={`/uploads/avatars/${props.user.avatar}`} alt="avatar"/></Link>
-                    </div>
-                    <div className="navBars"><i class="fas fa-bars fa-2x"></i></div>
-                </div>
+                <BurgerNav avatar={props.user.avatar}/>
         :
             <div className="navLinkGroup">
                 <Link to="/signup" className="navLink">Sign Up</Link>
@@ -39,6 +34,7 @@ let NavBar = (props) =>
             </div>
         }
     </div>
+       
 
 let NavBarSmart = connect(state => ({user: state.user}))(windowSize(NavBar))
 export default NavBarSmart;
