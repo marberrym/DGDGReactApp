@@ -18,7 +18,7 @@ html body {
   font-family: var(--other-text);
 }
 
-.aboutBox {
+.homeTextBox, .aboutBox {
   max-width: 35em;
   font-size: 1.1em;
   padding: 1em;
@@ -63,6 +63,7 @@ input {
   border: 1px solid var(--border-black);
 }
 
+
 label {
   margin-bottom: 2em;
 }
@@ -89,6 +90,7 @@ textarea {
   border: 1px solid var(--border-black);
   font-family: var(--other-text);
   transition: .2s ease-in-out;
+  cursor: pointer;
 }
 
 .descContainer {

@@ -3,6 +3,7 @@ import NavBarSmart from '../PageComponents/NavBar';
 import HeadLogo from '../PageComponents/HeadLogo';
 import GoalForm from '../PageComponents/GoalForm';
 import postReq from '../postReq';
+import { withRouter } from 'react-router-dom';
 
 class NewGoal extends Component {
     constructor(props) {
@@ -34,7 +35,7 @@ class NewGoal extends Component {
                     token: localStorage.token
                 },
                 body: JSON.stringify(data) 
-            })
+            }, this.props.history.push, '/')
         }
         let update = (key, value) => this.setState({[key]: value})
 

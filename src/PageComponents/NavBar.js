@@ -14,14 +14,24 @@ let NavBar = (props) =>
             <Link to="/about" className="navLink">About DGDG</Link>
         </div>
         {localStorage.token ?
-            <div className="navLinkGroup">
-                <Link to='/goals'><img className="navBarLogo" src={`/uploads/avatars/${props.user.avatar}`} alt="avatar"/></Link>
-                <Link to="/goals" className="navLink">My Goals</Link>
-                <div className="navLink" onClick={event => {
-                    window.localStorage.clear()
-                    props.dispatch({type: "ASSIGN_USER", data: {}})
-                }}>Log Out</div>
-            </div>
+            props.screenWidth > 600 ?
+                <div className="navLinkGroup">
+                    <div className="avatarBox">
+                        <Link to='/goals'><img className="navBarLogo navBarAvatar" src={`/uploads/avatars/${props.user.avatar}`} alt="avatar"/></Link>
+                    </div>
+                    <Link to="/goals" className="navLink">My Goals</Link>
+                    <div className="navLink" onClick={event => {
+                        window.localStorage.clear()
+                        props.dispatch({type: "ASSIGN_USER", data: {}})
+                    }}>Log Out</div>
+                </div>
+            :
+                <div className="navLinkGroup">
+                    <div className="avatarBox">
+                        <Link to='/goals'><img className="navBarLogo navBarAvatar" src={`/uploads/avatars/${props.user.avatar}`} alt="avatar"/></Link>
+                    </div>
+                    <div className="navBars"><i class="fas fa-bars fa-2x"></i></div>
+                </div>
         :
             <div className="navLinkGroup">
                 <Link to="/signup" className="navLink">Sign Up</Link>

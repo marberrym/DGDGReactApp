@@ -1,7 +1,13 @@
 .navBarLogo {
     height: 2em;
+    width: 2em;
     transition: .3s ease-in-out;
   }
+
+.navBarAvatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 .navbar {
     position: sticky;
@@ -14,7 +20,7 @@
     justify-content: space-between;
   }
   
-.navLink {
+.navBars, .navLink {
     margin-left: 1em;
     text-decoration: none;
     font-weight: 800;
@@ -23,7 +29,11 @@
     cursor: pointer;
   }
 
-.navBarLogo:hover, .navLink:hover {
+.navBars {
+  opacity: .4;
+}
+
+.navBars:hover, .navBarLogo:hover, .navLink:hover {
       transform: scale(1.1);
   }
   
