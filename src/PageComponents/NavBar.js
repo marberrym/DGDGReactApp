@@ -11,7 +11,7 @@ let NavBar = (props) =>
             
             <Link to="/about" className="navLink">About DGDG</Link>
         </div>
-        {props.user.id ?
+        {localStorage.token ?
             <div className="navLinkGroup">
                 <Link to="/goals" className="navLink">My Goals</Link>
                 <div className="navLink" onClick={event => {

@@ -8,7 +8,7 @@ let validate = (req, res) => {
             console.log(err);
             res.send({status: 'error'})
         } else {
-            db.one(`SELECT first_name, last_name, email, avatar_file, id FROM dgdg_users where id=$1`, decoded.id)
+            db.one(`SELECT first_name, last_name, email, avatar_file, id FROM dgdg_users WHERE id=$1`, decoded.id)
             .then(data => {
                 let user = {
                     id: data.id,

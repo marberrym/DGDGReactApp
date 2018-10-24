@@ -6,8 +6,9 @@ let LoginForm = (props) =>
     <div className="pageLayout">
         <NavBar/>
         <HeadLogo />
-        <form className="formflex" onSubmit={(event) => {
+        <form className="formflex" onSubmit={event => {
                 event.preventDefault();
+                props.login();
                 props.update('username', '');
                 props.update('password', '')}
             }>

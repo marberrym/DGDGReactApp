@@ -11,7 +11,8 @@ const protect = expressJwt({
 });
 
 const signup = require('./routes/signup');
-const validate = require('./routes/validate')
+const login = require('./routes/login');
+const validate = require('./routes/validate');
 
 app.use(bodyParser.json());
 app.use(allowCORS);
@@ -19,7 +20,10 @@ app.use(allowCORS);
 //signup route
 app.post('/signup', signup);
 
-//validation
+//login route
+app.post('/login', login);
+
+//validate existing token
 app.get('/validate', validate);
 
 app.listen(5000)
