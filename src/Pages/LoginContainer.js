@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import LoginForm from '../PageComponents/LoginForm';
-import url from '../globalURL';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import fetchReq from '../fetchReq';
 
 class LoginFormContainer extends Component {
     constructor(props) {
@@ -15,23 +15,16 @@ class LoginFormContainer extends Component {
     render() {
         let login = () => {
             let user = {
-                username: this.state.username,
+                username: this.state.username.toLocaleLowerCase(),
                 password: this.state.password
             }
-
-            fetch(`${url}/login`, {
+            fetchReq('/login', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json; charset=utf-8"
                 },
                 body: JSON.stringify(user) 
-            })
-            .then(res => res.json())
-            .then(res => {
-                window.localStorage.setItem('token', res.token)
-                this.props.dispatch({type: "ASSIGN_USER", data: res.user})
-                this.props.history.push('/')
-            })
+            }, this.props.history.push, '/', this.props.dispatch)
         }
         let updateState = (keyvalue, string) =>
             this.setState({[keyvalue]: string})

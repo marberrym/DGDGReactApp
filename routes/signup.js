@@ -13,7 +13,7 @@ let signUp = (req, res) => {
         })
         let response = {
             token: token,
-            user: {
+            data: {
                 username: data.username,
                 id: data.id,
                 avatar: data.avatar_file,

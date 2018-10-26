@@ -21,9 +21,9 @@ class SignUpContainer extends Component {
             let newUser = {
                 first_name: this.state.firstname,
                 last_name: this.state.lastname,
-                username: this.state.username,
+                username: this.state.username.toLowerCase(),
                 password: this.state.password,
-                email: this.state.email
+                email: this.state.email.toLowerCase()
             }
             fetch(`${url}/signup`, {
                 method: 'POST',
