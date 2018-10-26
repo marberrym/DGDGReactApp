@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import url from './globalURL';
 
-export default (path, parameters, type = null) => (BaseComponent) => 
+export default (path, parameters) => (BaseComponent) => 
     class Injection extends Component {
         constructor(props) {
             super(props)
@@ -21,8 +21,8 @@ export default (path, parameters, type = null) => (BaseComponent) =>
                     loading: false
                 })
                 console.log(res)
-                if(type) {
-                    this.props.dispatch({type: type, data: res});
+                if(res.action) {
+                    this.props.dispatch({type: res.action, data: res.data});
                 }
             })
         }

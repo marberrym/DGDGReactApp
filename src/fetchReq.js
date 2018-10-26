@@ -1,6 +1,6 @@
 import url from './globalURL';
 
-let postReq = (path, method, push, pushPath) => {
+let fetchReq = (path, method, push, pushPath) => {
     fetch(url + path, method)
     .then(res => res.json())
     .then(res => {
@@ -9,4 +9,4 @@ let postReq = (path, method, push, pushPath) => {
     })  
 }
 
-export default postReq;
+export default fetchReq;

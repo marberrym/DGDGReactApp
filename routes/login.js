@@ -15,7 +15,8 @@ let login = (req, res) => {
                 id: data.id,
                 avatar: data.avatar_file,
             },
-            status: 'success'
+            status: 'success',
+            action: 'ASSIGN_USER'
         }
         console.log(response)
         res.send(response)

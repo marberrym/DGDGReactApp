@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import NavBarSmart from '../PageComponents/NavBar';
 import HeadLogo from '../PageComponents/HeadLogo';
 import GoalForm from '../PageComponents/GoalForm';
-import postReq from '../postReq';
-import { withRouter } from 'react-router-dom';
+import fetchReq from '../fetchReq';
+
 
 class NewGoal extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class NewGoal extends Component {
                 goal_privacy: this.state.goal_privacy,
                 goal_description: this.state.goal_description
             }
-            postReq('/goal', {
+            fetchReq('/goal', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",

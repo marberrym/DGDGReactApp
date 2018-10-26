@@ -11,12 +11,15 @@ let validate = (req, res) => {
             db.one(`SELECT username, first_name, last_name, email, avatar_file, id FROM dgdg_users WHERE id=$1`, decoded.id)
             .then(data => {
                 let user = {
-                    username: data.username,
-                    id: data.id,
-                    first_name: data.first_name,
-                    last_name: data.last_name,
-                    email: data.email,
-                    avatar: data.avatar_file,
+                    data: {
+                        username: data.username,
+                        id: data.id,
+                        first_name: data.first_name,
+                        last_name: data.last_name,
+                        email: data.email,
+                        avatar: data.avatar_file
+                    },
+                    action: 'ASSIGN_USER',
                     status: 'success'
                 }
                 res.send(user)
