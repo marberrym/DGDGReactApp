@@ -1,7 +1,9 @@
 let assignUser = (oldState, action) => ({...oldState, user: action.data})
+let assignGoals = (oldState, action) => ({...oldState, goals: action.data.goals})
 
 let actionRouter = {
-    "ASSIGN_USER": assignUser
+    "ASSIGN_USER": assignUser,
+    "ASSIGN_GOALS": assignGoals
 }
 
 let reducer = (oldState, action) => {

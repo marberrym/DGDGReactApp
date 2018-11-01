@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import About from './Pages/About';
-import Goals from './Pages/Goals';
+import MyGoals from './Pages/MyGoals';
 import SignUpContainer from './Pages/SignUpContainer';
 import Completed from './Pages/Completed';
 import InProgress from './Pages/InProgress';
@@ -20,7 +20,7 @@ class Router extends React.Component {
                 <Route exact path="/login" component={LoginContainer} />
                 <Route exact path="/newgoal" component={NewGoal} />
                 <Route exact path="/about" component={About} />
-                <Route exact path="/goals" component={Goals} />
+                <Route exact path="/goals" component={MyGoals} />
                 <Route exact path="/completed" component={Completed} />
                 <Route exact path="/inprogress" component={InProgress} />
             </Switch>
@@ -30,7 +30,7 @@ class Router extends React.Component {
     
 
 
-let RouterSmart = connect()(inject('/validate', {headers: {token: localStorage.token}}, "ASSIGN_USER")(Router))
+let RouterSmart = connect()(inject('/validate', {headers: {token: localStorage.token}})(Router))
 
 export default RouterSmart
 
