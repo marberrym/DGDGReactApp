@@ -3,6 +3,7 @@ import HeadLogo from '../PageComponents/HeadLogo';
 import NavBar from '../PageComponents/NavBar';
 import { connect } from 'react-redux'; 
 import { Link } from 'react-router-dom';
+import Loading from '../PageComponents/Loading';
 
 let HomePage = (props) => 
     <div className="pageLayout">

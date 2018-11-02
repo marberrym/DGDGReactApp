@@ -37,6 +37,20 @@
     text-transform: uppercase;
   }
 
+  .loading {
+    animation: rotate 1s infinite linear;
+    height: 5em;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg)
+    }
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+
   .dg1 {
     text-transform: uppercase;
     margin-left: .5em;
