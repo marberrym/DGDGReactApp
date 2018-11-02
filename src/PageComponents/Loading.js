@@ -3,7 +3,7 @@ import './headLogo.css';
 
 let Loading = () =>
     <div>
-        <img class='headIMG loading'src='./images/dgdg.png'/>
+        <img className='headIMG loading'src='./images/dgdg.png'/>
     </div>
 
 export default Loading;

@@ -28,7 +28,7 @@ export default (path, parameters) => (BaseComponent) =>
         }
 
         render() {
-            return <BaseComponent {...this.state}/>
+            return <BaseComponent {...this.state.loading}/>
         }
     }
 
