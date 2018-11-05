@@ -1,0 +1,13 @@
+.goalHeader {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    height: 40px;
+}
+
+.goalBG {
+    background-color: rgba(215, 215, 215, 0.705);
+    padding: 1em;
+}

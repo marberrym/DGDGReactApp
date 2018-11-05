@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import HeadLogo from '../PageComponents/HeadLogo';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './tabStyles.css';
+import GoalList from '../PageComponents/GoalList';
+
 
 
 class MyGoals extends Component {
@@ -49,7 +51,7 @@ class MyGoals extends Component {
                     {this.state.daily.length === 0 ?
                         <div>You don't have any goals set for today!  Let's set some.</div>
                     :
-                        <div>Daily Goals</div>
+                        this.state.daily.map(goal => <GoalList goal={goal}/>)
                     }
                 </TabPanel>
                 <TabPanel>
