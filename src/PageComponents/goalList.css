@@ -3,11 +3,101 @@
     align-items: center;
 }
 
+.goalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.goalContent {
+    margin-left: 2em;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-basis: 90%;
+}
+
+.goalName {
+    font-size: 2em;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.privacyStatus {
+    font-size: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goalHead {
+    width: 100%;
+}
+
 .icon {
-    height: 40px;
+    height: 20px;
+}
+
+.iconCat {
+    height: 100px;
+    flex-basis: 10%;
 }
 
 .goalBG {
-    background-color: rgba(215, 215, 215, 0.705);
+    background-color: rgba(215, 215, 215, 0.305);
     padding: 1em;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    border: 1px solid var(--border-black);
+}
+
+.goalScopeSection {
+    font-size: 1em;
+    margin-top: .5em;
+    font-weight: bolder;
+}
+
+.goalScope {
+    
+}
+
+.goalDesc {
+    margin-top: .5em;
+    font-style: italic;
+}
+
+.goalSubHead {
+    font-size: .9em;
+    font-weight: normal;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.public, .startDate {
+    color: green;
+}
+
+.private, .completeDate {
+    color: red;
+}
+
+@media only screen and (max-width: 600px) {
+    .goalBG {
+        flex-direction: column;
+    }
+    .goalScope {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .goalName {
+        flex-direction: column;
+        margin-top: .5em;
+    }
 }
