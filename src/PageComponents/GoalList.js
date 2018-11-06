@@ -19,7 +19,7 @@ let goalPrivacy = {
 }
 
 let goalScope = {
-    '1': 'Goal for the day!',
+    '1': '- A Daily Goal',
     '2': 'Goal for the week!',
     '3': 'Goal for the month!',
     '4': 'Goal for the year!',
@@ -43,12 +43,14 @@ let GoalList = (props) =>
                 <div>Private</div>
             }
             <img className='icon' src={goalTypeIcon[props.goal.goal_category]}/>
-            <div>{`${goalType[props.goal.goal_category]} Goal`}</div>
-            <div>Goal Started on {moment(props.goal.creation_date).format('Do, MMMM, YYYY')}.</div>
-            <div>Targeted Achievment Date: {moment(props.goal.creation_date).add(1, goalScopeAdd[props.goal.goal_scope]).format('Do, MMMM, YYYY')}</div>   
+            <div>{`${goalType[props.goal.goal_category]} Goal`}</div>   
         </div>
-        <div>{props.goal.goal_name}</div>
-        <div>{goalScope[props.goal.goal_scope]}</div>
+        <div>
+            <div>{props.goal.goal_name}  {goalScope[props.goal.goal_scope]}</div>
+        </div>
+        
+        <div>Goal Started on {moment(props.goal.creation_date).format('Do, MMMM, YYYY')}.</div>
+        <div>Target Completion: {moment(props.goal.creation_date).add(1, goalScopeAdd[props.goal.goal_scope]).format('Do, MMMM, YYYY')}.</div>
         <div>{props.goal.goal_description}</div>
     </div>
 
