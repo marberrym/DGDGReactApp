@@ -1,6 +1,9 @@
 import React from 'react';
 import './goalList.css';
 import moment from 'moment';
+import fetchReq from '../fetchReq';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 let goalTypeIcon = {
     '1': './icons/professional.svg',
@@ -47,6 +50,12 @@ let GoalList = (props) =>
                         :
                             <span className="private">&nbsp; Private</span>
                         }
+                        <button className="btn" onClick={event => {
+                            fetchReq(`/updateprivacy?goalID=${props.goal.id}&privacy=${props.goal.goal_privacy}`, {
+                                headers: {token: localStorage.token}
+                            }, props.history.push, '/goals', props.dispatch
+                            )
+                        }}>Change</button>
                     </div>
                 </div>
                 <ul className="goalSubHead">
@@ -67,4 +76,5 @@ let GoalList = (props) =>
         </div>
     </div>
 
-export default GoalList;
+let GoalListSmart = connect()(GoalList)
+export default withRouter(GoalListSmart);
