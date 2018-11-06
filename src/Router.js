@@ -8,6 +8,7 @@ import Completed from './Pages/Completed';
 import InProgress from './Pages/InProgress';
 import LoginContainer from './Pages/LoginContainer';
 import NewGoal from './Pages/NewGoal';
+import CheckIn from './Pages/CheckInContainer';
 import inject from './inject';
 import { connect } from 'react-redux';
 import Loading from './PageComponents/Loading';
@@ -21,6 +22,7 @@ class Router extends React.Component {
                     <Route exact path="/signup" component={SignUpContainer} />
                     <Route exact path="/login" component={LoginContainer} />
                     <Route exact path="/newgoal" component={NewGoal} />
+                    <Route exact path="/checkin" component={CheckIn} />
                     <Route exact path="/about" component={About} />
                     <Route exact path="/goals" component={MyGoals} />
                     <Route exact path="/completed" component={Completed} />

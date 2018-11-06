@@ -26,7 +26,7 @@ let NavBar = (props) =>
                     }}>Log Out</div>
                 </div>
             :
-                <BurgerNav avatar={props.user.avatar}/>
+                <BurgerNav avatar={props.user.avatar} dispatch={props.dispatch}/>
         :
             <div className="navLinkGroup">
                 <Link to="/signup" className="navLink">Sign Up</Link>

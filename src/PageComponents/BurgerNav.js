@@ -30,9 +30,12 @@ class BurgerNav extends Component {
             ><i class="fas fa-bars fa-2x"></i></div>
             {this.state.isOpen === true ?
                 <div className="slideMenu">
-                    <div className="slideItem">My Goals</div>
-                    <div className="slideItem">New Goal</div>
-                    <div className="slideItem">Log Out</div>
+                    <Link to="/goals" className="slideItem"><div>My Goals</div></Link>
+                    <Link to="/newgoal" className="slideItem"><div>New Goal</div></Link>
+                    <div className="slideItem" onClick={event => {
+                        window.localStorage.clear();
+                        this.props.dispatch({type: "ASSIGN_USER", data: {}})
+                    }}>Log Out</div>
                 </div>
             :
                 null

@@ -12,8 +12,7 @@ let HomePage = (props) =>
         {props.user.id ?
             <div className="pageLayout">
                 <div className="buttonContainer">
-                    <button className="btn">Completed</button>
-                    <button className="btn">Check-in</button>
+                    <Link to="/checkin"><button className="btn">Check-in</button></Link>
                     <Link to="/newgoal"><button className="btn">New Goal</button></Link>
                 </div>
                 <div>Welcome Back {props.user.username}</div>

@@ -6,6 +6,7 @@ import HeadLogo from '../PageComponents/HeadLogo';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './tabStyles.css';
 import GoalList from '../PageComponents/GoalList';
+import { Link } from 'react-router-dom';
 
 
 
@@ -38,6 +39,10 @@ class MyGoals extends Component {
         return <div className="pageLayout">
             <NavBar/>
             <HeadLogo/>
+            <div className="buttonContainer">
+                <button className="btn">Check-in</button>
+                <Link to="/newgoal"><button className="btn">New Goal</button></Link>
+            </div>
             <Tabs selectedTabClassName="selectedTab" selectedTabPanelClassName="tabView" className="tabSection">
                 <TabList className="tabPanel">
                     <Tab className="tab">Daily Goals</Tab>
@@ -58,28 +63,28 @@ class MyGoals extends Component {
                     {this.state.weekly.length === 0 ?
                         <div>You don't have any goals set for this week!  Let's set some.</div>
                     :
-                        <div>Weekly Goals</div>
+                        this.state.weekly.map(goal => <GoalList goal={goal}/>)
                     }
                 </TabPanel>
                 <TabPanel>
                     {this.state.monthly.length === 0 ?
                         <div>You don't have any goals set for this month!  Let's set some.</div>
                     :
-                        <div>Monthly Goals</div>
+                        this.state.monthly.map(goal => <GoalList goal={goal}/>)
                     }
                 </TabPanel>
                 <TabPanel>
                     {this.state.annual.length === 0 ?
                         <div>You don't have any goals set for this year!  Let's set some.</div>
                     :
-                        <div>Annual Goals</div>
+                        this.state.annual.map(goal => <GoalList goal={goal}/>)
                     }
                 </TabPanel>
                 <TabPanel>
                     {this.state.completed.length === 0 ?
                         <div>You don't have any completed goals with DGDG!  Let's start some!</div>
                     :
-                        <div>Completed Goals</div>
+                        this.state.completed.map(goal => <GoalList goal={goal}/>)
                     }
                 </TabPanel>
                 <TabPanel>
