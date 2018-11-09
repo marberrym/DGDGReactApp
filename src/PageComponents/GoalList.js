@@ -41,23 +41,7 @@ let GoalList = (props) =>
         <img className='iconCat' src={goalTypeIcon[props.goal.goal_category]}/> 
         <div className="goalContent">
             <div className="goalHead">
-                <div className="goalName">
-                    <div>{props.goal.goal_name}</div>
-                    <div className="privacyStatus">
-                        <img className='icon' src={goalPrivacy[props.goal.goal_privacy]}/>
-                        {props.goal.goal_privacy === 1 ?
-                            <span className="public">&nbsp; Public</span>
-                        :
-                            <span className="private">&nbsp; Private</span>
-                        }
-                        <button className="btn" onClick={event => {
-                            fetchReq(`/updateprivacy?goalID=${props.goal.id}&privacy=${props.goal.goal_privacy}`, {
-                                headers: {token: localStorage.token}
-                            }, props.history.push, '/goals', props.dispatch
-                            )
-                        }}>Change</button>
-                    </div>
-                </div>
+                <div className="goalName">{props.goal.goal_name}</div>
                 <ul className="goalSubHead">
                     <li>A {goalScope[props.goal.goal_scope]} {goalType[props.goal.goal_category]} Goal</li>
                 </ul>
@@ -65,14 +49,39 @@ let GoalList = (props) =>
             <div className="goalScopeSection">
                 <div className="goalScope">
                     <span>Goal Started:</span>
-                    <span className="startDate"> {moment(props.goal.creation_date).format('Do, MMMM, YYYY')}.</span>
+                    <span className="startDate"> {moment(props.goal.creation_date).format('h:mmA, MM-DD-YYYY')}.</span>
                 </div>
                 <div className="goalScope">
                     <span>Target Completion:</span>
-                    <span className="completeDate"> {moment(props.goal.creation_date).add(1, goalScopeAdd[props.goal.goal_scope]).format('Do, MMMM, YYYY')}.</span>
+                    <span className="completeDate"> {moment(props.goal.creation_date).add(1, goalScopeAdd[props.goal.goal_scope]).format('h:mmA, MM-DD-YYYY')}.</span>
                 </div>
             </div>
             <div className="goalDesc">{props.goal.goal_description}</div>
+        </div>
+        <div className="goalRightCol">
+            <div className="privacyStatus">
+                <img className='icon' src={goalPrivacy[props.goal.goal_privacy]}/>
+                {props.goal.goal_privacy === 1 ?
+                    <div>Public</div>
+                :
+                    <div>Private</div>
+                }
+                <button className="btn" onClick={event => {
+                    fetchReq(`/updateprivacy?goalID=${props.goal.id}&privacy=${props.goal.goal_privacy}`, {
+                        headers: {token: localStorage.token}
+                    }, props.history.push, '/goals', props.dispatch)
+                }}>Change</button>
+            </div>
+            <div className="goalStatus">Status: In Progress</div>
+            {props.goal.goal_status !== 3 ?
+                <button className="btn" onClick={event => {
+                    fetchReq(`/complete?goalID=${props.goal.id}`, {
+                        headers: {token: localStorage.token}
+                    }, props.history.push, '/goals', props.dispatch)
+                }}>Complete</button>
+            :
+                <div>Completed!</div>
+            }
         </div>
     </div>
 

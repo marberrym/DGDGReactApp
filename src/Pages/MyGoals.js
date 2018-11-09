@@ -14,6 +14,7 @@ class MyGoals extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            allgoals: [],
             daily: [],
             weekly: [],
             monthly: [],
@@ -26,6 +27,7 @@ class MyGoals extends Component {
     componentDidUpdate(prevState) {
         if (prevState !== this.props) {
             this.setState({
+                allgoals: this.props.goals,
                 daily: this.props.goals.filter(goal => goal.goal_scope === 1),
                 weekly: this.props.goals.filter(goal => goal.goal_scope === 2),
                 monthly: this.props.goals.filter(goal => goal.goal_scope === 3),
@@ -45,6 +47,7 @@ class MyGoals extends Component {
             </div>
             <Tabs selectedTabClassName="selectedTab" selectedTabPanelClassName="tabView" className="tabSection">
                 <TabList className="tabPanel">
+                    <Tab className="tab">All Goals</Tab>
                     <Tab className="tab">Daily Goals</Tab>
                     <Tab className="tab">Weekly Goals</Tab>
                     <Tab className="tab">Monthly Goals</Tab>
@@ -52,6 +55,13 @@ class MyGoals extends Component {
                     <Tab className="tab">Completed Goals</Tab>
                     <Tab className="tab">Check Ins</Tab>
                 </TabList>
+                <TabPanel>
+                    {this.state.allgoals.length === 0 ?
+                        <div>You don't have any goals!  Let's set some.</div>
+                    :
+                        this.state.allgoals.map(goal => <GoalList goal={goal}/>)
+                    }
+                </TabPanel>
                 <TabPanel>
                     {this.state.daily.length === 0 ?
                         <div>You don't have any goals set for today!  Let's set some.</div>

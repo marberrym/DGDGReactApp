@@ -10,10 +10,20 @@ let updatePrivacy = (oldState, action) => {
     return {...oldState, goals: newGoals}
 }
 
+let completeGoal = (oldState, action) => {
+    let updatedGoal = oldState.goals.filter(goal => goal.id === action.data.id)
+    updatedGoal[0].goal_status = 3
+    console.log(action);
+
+    let newGoals = oldState.goals.filter(goal => goal.id !== action.data.id).concat(updatedGoal)
+    return {...oldState, goals: newGoals}
+}
+
 let actionRouter = {
     "ASSIGN_USER": assignUser,
     "ASSIGN_GOALS": assignGoals,
-    "UPDATE_PRIVACY": updatePrivacy
+    "UPDATE_PRIVACY": updatePrivacy,
+    "COMPLETE_GOAL": completeGoal,
 }
 
 let reducer = (oldState, action) => {

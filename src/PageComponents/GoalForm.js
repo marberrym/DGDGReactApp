@@ -8,7 +8,7 @@ let GoalForm = (props) =>
             props.submit();
             Object.keys(props).forEach(prop => {
                 console.log(prop);
-                if(prop !== 'update') {
+                if(prop !== 'update' && prop !== 'submit') {
                     props.update(prop, '')
                 }
             })

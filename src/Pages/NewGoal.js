@@ -35,7 +35,7 @@ class NewGoal extends Component {
                     token: localStorage.token
                 },
                 body: JSON.stringify(data) 
-            }, this.props.history.push, '/')
+            }, this.props.history.push, '/goals')
         }
         let update = (key, value) => this.setState({[key]: value})
 

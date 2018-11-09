@@ -14,23 +14,26 @@
     margin-left: 2em;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-basis: 90%;
+    flex-basis: 80%;
 }
 
 .goalName {
     font-size: 2em;
     font-weight: 600;
+}
+
+.goalRightCol {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex-basis: 10%;
 }
 
 .privacyStatus {
-    font-size: .5em;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .goalHead {
@@ -39,6 +42,7 @@
 
 .icon {
     height: 20px;
+    margin: .5em;
 }
 
 .iconCat {
@@ -50,7 +54,7 @@
     background-color: rgba(215, 215, 215, 0.305);
     padding: 1em;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     border-radius: 2px;
     border: 1px solid var(--border-black);
 }

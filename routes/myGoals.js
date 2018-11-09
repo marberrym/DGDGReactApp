@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 let myGoals = (req, res) => {
     let decoded = jwt.decode(req.headers.token)
     try {
-        db.query(`SELECT * FROM dgdg_goals WHERE user_id=$1`, decoded.id)
+        db.query(`SELECT * FROM dgdg_goals WHERE user_id=$1 ORDER BY creation_date DESC`, decoded.id)
         .then(data => {
             let response = {
             data: {

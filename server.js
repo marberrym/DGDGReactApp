@@ -16,6 +16,7 @@ const validate = require('./routes/validate');
 const newGoal = require('./routes/newGoal');
 const myGoals = require('./routes/myGoals');
 const updatePrivacy = require('./routes/updatePrivacy');
+const completeGoal = require('./routes/completeGoal');
 
 app.use(bodyParser.json());
 app.use(allowCORS);
@@ -32,6 +33,7 @@ app.post('/goal', protect, newGoal);
 //get my goals
 app.get('/goal', protect, myGoals);
 app.get('/updateprivacy', protect, updatePrivacy);
+app.get('/complete', protect, completeGoal);
 
 //validate existing token
 app.get('/validate', validate);
