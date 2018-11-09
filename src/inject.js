@@ -16,13 +16,19 @@ export default (path, parameters) => (BaseComponent) =>
             fetch(url + path, parameters)
             .then(res => res.json())
             .then(res => {
-                this.setState({
-                    data: res,
-                    loading: false
-                })
-                console.log(res)
-                if(res.action) {
-                    this.props.dispatch({type: res.action, data: res.data});
+                if (res.error === 'jwt expired') {
+                    localStorage.removeItem('token');
+                    this.setState({
+                        loading: false
+                    })
+                } else if (!res.error) {
+                    this.setState({
+                        data: res,
+                        loading: false
+                    })
+                    if(res.action) {
+                        this.props.dispatch({type: res.action, data: res.data});
+                    }
                 }
             })
         }

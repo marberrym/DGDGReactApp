@@ -6,7 +6,9 @@ let validate = (req, res) => {
     jwt.verify(req.headers.token, secret, (err, decoded) => {
         if (err) {
             console.log(err);
-            res.send({status: 'error'})
+            res.send({status: 'error',
+                error: err.message
+            })
         } else {
             db.one(`SELECT username, first_name, last_name, email, avatar_file, id FROM dgdg_users WHERE id=$1`, decoded.id)
             .then(data => {
