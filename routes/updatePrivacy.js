@@ -7,15 +7,27 @@ let updatePrivacy = (req, res) => {
     let privacy = req.query.privacy;
     if (privacy === '1') {
         db.none(`UPDATE dgdg_goals SET goal_privacy=2 WHERE id=$1 AND user_id=$2`, [goalID, decoded.id])
-        .then(res.send({status: 'success'}))
+        .then(res.send({
+            status: 'success',
+            action: 'UPDATE_PRIVACY',
+            data: {
+                    privacy: 2,
+                    id: Number(goalID)
+                }
+        }))
         .catch(err => {console.log(err);
-            res.send({status: 'error',
-            action: 'UPDATE_PRIVACY'
-        });
+            res.send({status: 'error'});
         });
     } else if (privacy === '2'){
         db.none(`UPDATE dgdg_goals SET goal_privacy=1 WHERE id=$1 AND user_id=$2`, [goalID, decoded.id])
-        .then(res.send({status: 'success'}))
+        .then(res.send({
+            status: 'success',
+            action: 'UPDATE_PRIVACY',
+            data: {
+                    privacy: 1,
+                    id: Number(goalID)
+                }
+        }))
         .catch(err => {console.log(err);
             res.send({status: 'error'});
         });

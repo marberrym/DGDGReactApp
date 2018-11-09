@@ -5,7 +5,6 @@ const db = require('../database');
 let validate = (req, res) => {
     jwt.verify(req.headers.token, secret, (err, decoded) => {
         if (err) {
-            console.log(err);
             res.send({status: 'error',
                 error: err.message
             })

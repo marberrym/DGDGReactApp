@@ -39,5 +39,5 @@ class Router extends React.Component {
 
 let RouterSmart = connect()(inject('/validate', {headers: {token: localStorage.token}})(Router))
 
-export default RouterSmart
+export default RouterSmart;
 

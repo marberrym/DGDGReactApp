@@ -3,9 +3,11 @@ let assignGoals = (oldState, action) => ({...oldState, goals: action.data.goals}
 
 let updatePrivacy = (oldState, action) => {
     let updatedGoal = oldState.goals.filter(goal => goal.id === action.data.id)
-    updatedGoal.goal_privacy = action.data.newStatus
-    console.log(updatedGoal)
-    return oldState
+    updatedGoal[0].goal_privacy = action.data.privacy
+    
+    let newGoals = oldState.goals.filter(goal => goal.id !== action.data.id).concat(updatedGoal)
+    
+    return {...oldState, goals: newGoals}
 }
 
 let actionRouter = {
