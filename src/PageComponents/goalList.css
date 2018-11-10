@@ -65,13 +65,15 @@
     font-weight: bolder;
 }
 
-.goalScope {
-    
-}
-
 .goalDesc {
     margin-top: .5em;
     font-style: italic;
+}
+
+.trophy {
+    height: 8em;
+    width: 6em;
+    transform: translateX(1em)
 }
 
 .goalSubHead {
@@ -88,6 +90,22 @@
 
 .private, .completeDate {
     color: red;
+}
+
+.star1 {
+    height: 1em;
+    transform: translateY(-10em)
+}
+
+.completedText {
+    color: var(--highlight);
+    background: red;
+    border-radius: 3px;
+    padding: .1em;
+    padding-left: .3em;
+    padding-right: .3em;
+    text-align: center;
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 600px) {

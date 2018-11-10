@@ -5,6 +5,7 @@ import fetchReq from '../fetchReq';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+
 let goalTypeIcon = {
     '1': './icons/professional.svg',
     '2': './icons/personal.svg',
@@ -38,7 +39,14 @@ let goalScopeAdd = {
 
 let GoalList = (props) => 
     <div className="goalBG">
-        <img className='iconCat' src={goalTypeIcon[props.goal.goal_category]}/> 
+        {props.goal.goal_status === 3 ?
+            <div>
+                <img className='trophy' src={'./icons/trophy.png'}/>
+                <div className='completedText'>Congratulations!</div>
+            </div>
+        :
+            <img className='iconCat' src={goalTypeIcon[props.goal.goal_category]}/> 
+        }
         <div className="goalContent">
             <div className="goalHead">
                 <div className="goalName">{props.goal.goal_name}</div>
