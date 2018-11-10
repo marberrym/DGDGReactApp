@@ -13,15 +13,25 @@ let About = () =>
             <div className="aboutBox">
                 <div className="aboutHead"><strong>Do Good, Die Great.</strong></div>
                 <div className="aboutSubHead">From dream to production by Matthew Marberry</div>
-                <div>
-                    Throughout his life Matthew has become familiar with the power of goals.
-                    Efficient goal oriented planning has the power to change many things in this world.
+                <div className="intro">
+                    A great man once said to me...
+                    <blockquote>
+                        "Matthew, if you walk through life choosing to <strong>do good</strong>,<br/> then at the very least you will be sure to <strong>die great</strong>."
+                    </blockquote>
+                    Since that day, those words have always resonated with me.
+                    <br/>
+                    As I continue to grow, I begin to see more of the hidden wisdom that lives in that lives in that statement.  I have allowed it to become one of the key
+                    principles that I try to live my life by.  It is a principle that I hope to share with others through my actions and the development of DGDG. 
                 </div>
             </div>
-            <div className="aboutBox">
+            <div className="devPicBox">
                 <img className="devPic" src="./images/aboutDev.jpg"></img>
             </div>
+            <div className="aboutContent">
+                New stuff
+            </div>
         </div>
+        
         <div className="aboutBox">
             DGDG is a goal management system.  It's a place where you can track your progress
             for your personal, professional and community-oriented goals.  You can keep your goals

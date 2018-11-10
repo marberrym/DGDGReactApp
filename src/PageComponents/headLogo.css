@@ -11,10 +11,10 @@
     color: azure;
     transform: translateY(30%);
     text-shadow:
-        -3px -3px 0 var(--border-black),
-        2px -2px 0 var(--border-black),
-        -1px 1px 0 var(--border-black),
-        1px 1px 0 var(--border-black);
+        -3px -3px 0 var(--shadow),
+        2px -2px 0 var(--shadow),
+        -1px 1px 0 var(--shadow),
+        1px 1px 0 var(--shadow);
     letter-spacing: .01em;
   }
 
@@ -70,16 +70,19 @@
     5% {
         transform: scale(1) translateY(0);
         color: transparent;
+        text-shadow: none;
     }
     25% {
         transform: scale(1.2) translateY(-20%);
-        color: var(--secondary-blue);
+        text-shadow: 1px 1px var(--darkest);
+        color: var(--secondary);
    }
     45% {
         transform: scale(1) translateY(0);
     }
     55% {
         color: transparent;
+        text-shadow: none;
     }
   }
 
