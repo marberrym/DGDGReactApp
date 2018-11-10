@@ -3,34 +3,29 @@ import HeadLogo from '../PageComponents/HeadLogo';
 import NavBar from '../PageComponents/NavBar';
 import { connect } from 'react-redux'; 
 import { Link } from 'react-router-dom';
-import Loading from '../PageComponents/Loading';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 let HomePage = (props) => 
     <div className="pageLayout">
         <NavBar />
+        <Carousel autoPlay={true} stopOnHover={false} showThumbs={false} showIndicators={false} showStatus={false} showArrows={false} infiniteLoop={true}>
+            <div className="caroSlide">
+                <img className="caroImg" src="./images/slides/board.jpg"></img>
+            </div>
+            <div className="caroSlide">
+                <img className="caroImg" src="./images/slides/climb.jpg"></img>
+            </div>
+            <div className="caroSlide">
+                <img className="caroImg" src="./images/slides/plan.jpg"></img>
+            </div>
+            <div className="caroSlide">
+                <img className="caroImg" src="./images/slides/scrabble.jpg"></img>
+            </div>
+        </Carousel>
         <HeadLogo />
-        {props.user.id ?
-            <div className="pageLayout">
-                <div className="buttonContainer">
-                    <Link to="/checkin"><button className="btn">Check-in</button></Link>
-                    <Link to="/newgoal"><button className="btn">New Goal</button></Link>
-                </div>
-                <div>Welcome Back {props.user.username}</div>
-            </div>
-        :
-            <div className="pageLayout">
-                <div className="homeTextBox">
-                    <p>
-                        Welcome to the DGDG community, where we not only focus on bettering ourselves both 
-                        professionally and personally, but also focus on bettering those around us.
-                    </p>
-                    <p>
-                        Closing the gap between who we are and who we want to be, one day at a time.
-                    </p>
-                </div>
-                <Link to="/signup"><button className="btn">Register</button></Link>
-            </div>
-        }
+        <Link to="/about"><button className='homeBtn'>Click to Learn More</button></Link>
     </div>
 
 
