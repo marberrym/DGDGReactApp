@@ -25,7 +25,7 @@ let HomePage = (props) =>
             </div>
         </Carousel>
         <HeadLogo />
-        <Link to="/about"><button className='homeBtn'>Click to Learn More</button></Link>
+        <Link to="/about"><button className='homeBtn'>Learn More</button></Link>
     </div>
 
 
