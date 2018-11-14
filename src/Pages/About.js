@@ -28,7 +28,7 @@ let About = () =>
                 <img className="devPic" src="./images/aboutDev.jpg"></img>
             </div>
             <div className="aboutContent">
-                New stuff
+                This is where I will go over smart goals and goal break down systems.
             </div>
         </div>
         
