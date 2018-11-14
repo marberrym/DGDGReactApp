@@ -42,7 +42,7 @@ class MyGoals extends Component {
             <NavBar/>
             <HeadLogo/>
             <div className="buttonContainer">
-                <button className="btn">Check-in</button>
+                <Link to="/checkin"><button className="btn">Check-in</button></Link>
                 <Link to="/newgoal"><button className="btn">New Goal</button></Link>
             </div>
             <Tabs selectedTabClassName="selectedTab" selectedTabPanelClassName="tabView" className="tabSection">

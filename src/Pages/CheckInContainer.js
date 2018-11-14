@@ -7,6 +7,7 @@ class CheckInContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            question: 0,
             goal: "",
             goal_outcome: 0,
             goal_improvements: "",
