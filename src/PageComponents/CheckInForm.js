@@ -4,7 +4,9 @@ import './checkin.css';
 let questionRouter = {
     0 : <div>
             What is a goal you have set for yourself today?
-            <textarea></textarea>
+            <div className="textContainer">
+                <textarea></textarea>
+            </div>
         </div>,
     1 : <div>
             Did you do something to help yourself today?
@@ -16,7 +18,7 @@ let questionRouter = {
 }
 
 let CheckInForm = (props) => 
-    <div>
+    <div className="checkinForm">
         {questionRouter[props.question]}
 
         {props.question > 0 ?

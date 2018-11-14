@@ -95,7 +95,7 @@ textarea {
   margin-right: 1em;
   border-radius: 2px;
   color: var(--secondary);
-  background-color: var(--box-bg);
+  background-color: white;
   border: 1px solid var(--secondary);
   font-family: var(--other-text);
   transition: .2s ease-in-out;

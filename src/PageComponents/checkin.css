@@ -1,0 +1,14 @@
+.checkinForm {
+    background-color: var(--box-bg);
+    border: 1px solid var(--shadow);
+    height: 20em;
+    width: 60em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.textContainer {
+    width: 30em;
+}
