@@ -9,10 +9,12 @@ class CheckInContainer extends Component {
         this.state = {
             question: 0,
             goal: "",
-            goal_outcome: 0,
+            goal_outcome: "",
             goal_improvements: "",
-            self_help: 0,
-            help_others: 0,
+            self_help: "",
+            self_help_response: "",
+            help_others: "",
+            help_others_response: "",
         }
     }
 

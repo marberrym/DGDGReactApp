@@ -56,13 +56,13 @@ let questionRouter = (props) => {
         2 : <div>
                 Did you do something to help yourself today?
                 <RadioGroup onChange={event => props.update("self_help", event)} horizontal>
-                    <RadioButton 
+                    <RadioButton
                         rootColor="#14261430" 
                         pointColor="#6DB263" 
                         value="1"
                         >Yes
                     </RadioButton>
-                    <RadioButton 
+                    <RadioButton
                         rootColor="#14261430" 
                         pointColor="#6DB263" 
                         value="2"
@@ -71,20 +71,28 @@ let questionRouter = (props) => {
                 </RadioGroup>
                 
                 {props.self_help == 1 ?
-                        <div>
-                            How did you help yourself today?
-                            <div className="textContainer">
-                                <textarea></textarea>
-                            </div>
+                    <div>
+                        <div>Awesome, self-love is key!</div>
+                        <div>How did you help yourself today?</div>
+                        <div className="textContainer">
+                            <textarea 
+                                value={props.self_help_response}
+                                onChange={event => props.update("self_help_response", event.target.value)}>
+                            </textarea>
                         </div>
-                    :
-                null
+                    </div>
+                :
+                    null
                 }
                 {props.self_help == 2 ? 
                     <div>
-                        How could you help yourself tomorrow?
+                        <div>That's okay, remember to treat yourself!</div>
+                        <div>How could you help yourself tomorrow?</div>
                         <div className="textContainer">
-                            <textarea></textarea>
+                            <textarea
+                                value={props.self_help_response}
+                                onChange={event => props.update("self_help_response", event.target.value)}>
+                            </textarea>
                         </div>
                     </div>
                 :
@@ -93,10 +101,40 @@ let questionRouter = (props) => {
             </div>,
         3 : <div>
                 Did you do something to help someone else today?
-                <RadioGroup horizontal>
-                    <RadioButton value="1">Yes</RadioButton>
-                    <RadioButton value="2">No</RadioButton>
+                <RadioGroup onChange={event => props.update("help_others", event)} horizontal>
+                    <RadioButton
+                        rootColor="#14261430" 
+                        pointColor="#6DB263" 
+                        value="1">Yes
+                    </RadioButton>
+                    <RadioButton 
+                        rootColor="#14261430" 
+                        pointColor="#6DB263" 
+                        value="2">No
+                    </RadioButton>
                 </RadioGroup>
+                {props.help_others == 1 ?
+                    <div>
+                        <div>That's awesome.  Help yourself, but always help others too.</div>
+                        <div>How did you help help someone else today?</div>
+                        <textarea value={props.help_others_response} 
+                            onChange={event => props.update("help_others_response", event.target.value)}>
+                        </textarea>
+                    </div>
+                :
+                    null
+                }
+                {props.help_others == 2 ?
+                    <div>
+                        <div>That's okay, remember helping others IS helping yourself!</div>
+                        <div>What could you do to help someone tomorrow?</div>
+                        <textarea value={props.help_others_response}
+                            onChange={event => props.update("help_others_response", event.target.value)}>
+                        </textarea>
+                    </div>
+                :
+                    null    
+                }
             </div>
     }
 
@@ -114,9 +152,16 @@ let CheckInForm = (props) =>
             :
                 null
             }
-            <button className="btn" onClick={event => {
-                props.update("question", props.question+1);
-            }}>Next</button>
+            {props.question !== 3 ?
+                <button className="btn" onClick={event => {
+                    props.update("question", props.question+1);
+                }}>Next</button>
+            :
+                <div>
+                    <button className="btn">Submit</button>
+                </div>
+            }
+            
         </div>
     </div>
 
