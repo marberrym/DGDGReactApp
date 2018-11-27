@@ -1,12 +1,13 @@
 import React from 'react';
 import './checkin.css';
 import { RadioGroup, RadioButton } from 'react-radio-buttons';
+import './goalList.css';
 
 let questionRouter = (props) => {
     
     let router = {
         0 : <div>
-            What is a goal you have set for yourself today?
+                What is a goal you have set for yourself today?
                 <div className="textContainer">
                     <textarea 
                         value={props.goal} 
@@ -15,25 +16,82 @@ let questionRouter = (props) => {
                 </div>
             </div>,
         1 : <div>
-                Did you do something to help yourself today?
-                <RadioGroup value={props.self_help} horizontal>
+                Were you able to complete this goal today?
+                <RadioGroup onChange={event => props.update("goal_outcome", event)} horizontal>
                     <RadioButton 
                         rootColor="#14261430" 
                         pointColor="#6DB263" 
                         value="1"
-                        onChange={event => props.update("self_help", 1)}
                         >Yes
                     </RadioButton>
                     <RadioButton 
                         rootColor="#14261430" 
                         pointColor="#6DB263" 
                         value="2"
-                        onChange={event => props.update("self_help", 2)}
                         >No
                     </RadioButton>
                 </RadioGroup>
+                {props.goal_outcome == 1 ?
+                    <div>
+                        <div>Great Job!  Keep it up!</div>
+                        <img className="trophy" src="./icons/trophy.png"/>
+                    </div>
+                :
+                    null
+                }
+                {props.goal_outcome == 2 ?
+                    <div>
+                        <div>That's okay!  Tomorrow is a new day!</div>
+                        <div>What could you have improved upon to meet that goal tomorrow?</div>
+                        <textarea 
+                            value={props.goal_improvements} 
+                            onChange={event => props.update("goal_improvements", event.target.value)}
+                        ></textarea>
+
+                    </div>
+                :
+                    null
+                }
             </div>,
         2 : <div>
+                Did you do something to help yourself today?
+                <RadioGroup onChange={event => props.update("self_help", event)} horizontal>
+                    <RadioButton 
+                        rootColor="#14261430" 
+                        pointColor="#6DB263" 
+                        value="1"
+                        >Yes
+                    </RadioButton>
+                    <RadioButton 
+                        rootColor="#14261430" 
+                        pointColor="#6DB263" 
+                        value="2"
+                        >No
+                    </RadioButton>
+                </RadioGroup>
+                
+                {props.self_help == 1 ?
+                        <div>
+                            How did you help yourself today?
+                            <div className="textContainer">
+                                <textarea></textarea>
+                            </div>
+                        </div>
+                    :
+                null
+                }
+                {props.self_help == 2 ? 
+                    <div>
+                        How could you help yourself tomorrow?
+                        <div className="textContainer">
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                :
+                    null
+                }
+            </div>,
+        3 : <div>
                 Did you do something to help someone else today?
                 <RadioGroup horizontal>
                     <RadioButton value="1">Yes</RadioButton>
