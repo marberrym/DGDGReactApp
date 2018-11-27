@@ -158,7 +158,7 @@ let CheckInForm = (props) =>
                 }}>Next</button>
             :
                 <div>
-                    <button className="btn">Submit</button>
+                    <button className="btn" onClick={event => props.submit()}>Submit</button>
                 </div>
             }
             

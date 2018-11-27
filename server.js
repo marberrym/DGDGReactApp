@@ -17,6 +17,7 @@ const newGoal = require('./routes/newGoal');
 const myGoals = require('./routes/myGoals');
 const updatePrivacy = require('./routes/updatePrivacy');
 const completeGoal = require('./routes/completeGoal');
+const newCheckin = require('./routes/newCheckin');
 
 app.use(bodyParser.json());
 app.use(allowCORS);
@@ -29,6 +30,9 @@ app.post('/login', login);
 
 //post new goal
 app.post('/goal', protect, newGoal);
+
+//post new checkin
+app.post('/checkin', protect, newCheckin);
 
 //get my goals
 app.get('/goal', protect, myGoals);
