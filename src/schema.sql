@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS dgdg_users, dgdg_goals, dgdg_likes, dgdg_likes, dgdg_comments,
-    dgdg_progress CASCADE;
+    dgdg_progress, dgdg_checkins CASCADE;
 
 CREATE TABLE dgdg_users (
     id SERIAL PRIMARY KEY,
@@ -44,4 +44,17 @@ CREATE TABLE dgdg_progress (
     progress_title varchar(500),
     progress_description TEXT,
     progress_image varchar(500)
+);
+
+CREATE TABLE dgdg_checkins (
+    id SERIAL PRIMARY KEY,
+    creation_date TIMESTAMP,
+    user_id INTEGER REFERENCES dgdg_users(id),
+    goal TEXT,
+    goal_outcome INTEGER NOT NULL,
+    goal_improvements TEXT,
+    self_help INTEGER NOT NULL,
+    self_help_response TEXT,
+    help_others INTEGER NOT NULL,
+    help_others_response TEXT
 );
