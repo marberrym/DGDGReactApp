@@ -11,8 +11,8 @@ class CheckInContainer extends Component {
             goal: "",
             goal_outcome: 0,
             goal_improvements: "",
-            self_help: "",
-            help_others: "",
+            self_help: 0,
+            help_others: 0,
         }
     }
 
