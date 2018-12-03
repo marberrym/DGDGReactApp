@@ -31,7 +31,7 @@ let questionRouter = (props) => {
                         >No
                     </RadioButton>
                 </RadioGroup>
-                {props.goal_outcome == 1 ?
+                {props.goal_outcome === 1 ?
                     <div>
                         <div>Great Job!  Keep it up!</div>
                         <img className="trophy" src="./icons/trophy.png"/>
@@ -39,7 +39,7 @@ let questionRouter = (props) => {
                 :
                     null
                 }
-                {props.goal_outcome == 2 ?
+                {props.goal_outcome === 2 ?
                     <div>
                         <div>That's okay!  Tomorrow is a new day!</div>
                         <div>What could you have improved upon to meet that goal tomorrow?</div>
@@ -70,7 +70,7 @@ let questionRouter = (props) => {
                     </RadioButton>
                 </RadioGroup>
                 
-                {props.self_help == 1 ?
+                {props.self_help === 1 ?
                     <div>
                         <div>Awesome, self-love is key!</div>
                         <div>How did you help yourself today?</div>
@@ -84,7 +84,7 @@ let questionRouter = (props) => {
                 :
                     null
                 }
-                {props.self_help == 2 ? 
+                {props.self_help === 2 ? 
                     <div>
                         <div>That's okay, remember to treat yourself!</div>
                         <div>How could you help yourself tomorrow?</div>
@@ -113,7 +113,7 @@ let questionRouter = (props) => {
                         value="2">No
                     </RadioButton>
                 </RadioGroup>
-                {props.help_others == 1 ?
+                {props.help_others === 1 ?
                     <div>
                         <div>That's awesome.  Help yourself, but always help others too.</div>
                         <div>How did you help help someone else today?</div>
@@ -124,7 +124,7 @@ let questionRouter = (props) => {
                 :
                     null
                 }
-                {props.help_others == 2 ?
+                {props.help_others === 2 ?
                     <div>
                         <div>That's okay, remember helping others IS helping yourself!</div>
                         <div>What could you do to help someone tomorrow?</div>
