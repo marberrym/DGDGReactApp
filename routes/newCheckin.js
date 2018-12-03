@@ -11,7 +11,10 @@ let newCheckin = (req, res) => {
     .then(res.send({status: "success"}))
     .catch(err => {
         console.log(err);
-        res.send({status: "error"});
+        res.send({
+            status: "error",
+            error: err
+        });
     })
 }
 
