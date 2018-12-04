@@ -33,6 +33,7 @@ class MyGoals extends Component {
                 monthly: this.props.goals.filter(goal => goal.goal_scope === 3),
                 annual: this.props.goals.filter(goal => goal.goal_scope === 4),
                 completed: this.props.goals.filter(goal => goal.goal_status === 3),
+                checkins: this.props.checkins
             })
         }
     }
@@ -109,7 +110,10 @@ class MyGoals extends Component {
     }
 }
     
-let MyGoalsSmart = connect(state => ({goals: state.goals}))(MyGoals)
+let MyGoalsSmart = connect(state => ({
+    goals: state.goals,
+    checkins: state.checkins
+}))(MyGoals)
 
 export default connect()(inject('/goal', {
     method: 'GET',

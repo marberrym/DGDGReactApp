@@ -1,5 +1,5 @@
 let assignUser = (oldState, action) => ({...oldState, user: action.data})
-let assignGoals = (oldState, action) => ({...oldState, goals: action.data.goals})
+let assignGoals = (oldState, action) => ({...oldState, goals: action.data.goals, checkins: action.data.checkins})
 
 let updatePrivacy = (oldState, action) => {
     let updatedGoal = oldState.goals.filter(goal => goal.id === action.data.id)

@@ -16,6 +16,7 @@ export default (path, parameters) => (BaseComponent) =>
             fetch(url + path, parameters)
             .then(res => res.json())
             .then(res => {
+                console.log(res);
                 if (res.error === 'jwt expired') {
                     localStorage.removeItem('token');
                     this.props.dispatch({type: 'ASSIGN_USER', data: {}})
