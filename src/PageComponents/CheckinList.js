@@ -3,6 +3,8 @@ import './checkin.css';
 import './goalList.css';
 import moment from 'moment';
 import fetchReq from '../fetchReq';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 let checkinPrivacy = {
     '1': './icons/public.svg',
@@ -21,7 +23,7 @@ let CheckinList = (props) =>
                     <div>Private</div>
                 }
                 <button className="btn" onClick={event => {
-                    fetchReq(`/updateprivacy?goalID=${props.goal.id}&privacy=${props.checkin.checkin_privacy}`, {
+                    fetchReq(`/updateprivacy?checkinID=${props.checkin.id}&privacy=${props.checkin.checkin_privacy}`, {
                         headers: {token: localStorage.token}
                     }, props.history.push, '/goals', props.dispatch)
                 }}>Change</button>
@@ -73,4 +75,5 @@ let CheckinList = (props) =>
         </div>
     </div>
 
-export default CheckinList;
+let CheckinListSmart = connect()(CheckinList)
+export default withRouter(CheckinListSmart);
