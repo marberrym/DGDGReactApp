@@ -31,9 +31,12 @@ let CheckinList = (props) =>
             <div className="singleOutcome">
                 <div className="responseHeader">Goal Completed: </div>
                 {props.checkin.goal_outcome === 1 ?
-                    <div className="responseFlex">
-                        <img src="./icons/trophy.png" className="checkinTrophy"/>
-                        <div className="responseYes">YES</div>
+                    <div>
+                        <div className="responseFlex">
+                            <img src="./icons/trophy.png" className="checkinTrophy"/>
+                            <div className="responseYes">YES</div>
+                        </div>
+                        <div className='completedText'>Congratulations!</div>
                     </div>
                 :
                     <div className="responseNo">NO</div>
@@ -42,9 +45,12 @@ let CheckinList = (props) =>
             <div className="singleOutcome">
                 <div className="responseHeader">Helped Self:</div>
                 {props.checkin.self_help === 1 ?
-                    <div className="responseFlex">
-                        <img src="./icons/trophy.png" className="checkinTrophy"/>
-                        <div className="responseYes">YES</div>
+                    <div>
+                        <div className="responseFlex">
+                            <img src="./icons/trophy.png" className="checkinTrophy"/>
+                            <div className="responseYes">YES</div>
+                        </div>
+                        <div className='completedText'>Congratulations!</div>
                     </div>
                 :
                     <div className="responseNo">NO</div>
@@ -53,9 +59,12 @@ let CheckinList = (props) =>
             <div className="singleOutcome">
                 <div className="responseHeader">Helped Others:</div>
                 {props.checkin.help_others === 1 ?
-                    <div className="responseFlex">
-                        <img src="./icons/trophy.png" className="checkinTrophy"/>
-                        <div className="responseYes">YES</div>
+                    <div>
+                        <div className="responseFlex">
+                            <img src="./icons/trophy.png" className="checkinTrophy"/>
+                            <div className="responseYes">YES</div>
+                        </div>
+                        <div className='completedText'>Congratulations!</div>
                     </div>
                 :
                     <div className="responseNo">NO</div>

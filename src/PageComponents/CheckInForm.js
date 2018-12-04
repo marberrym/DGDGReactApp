@@ -138,7 +138,7 @@ let questionRouter = (props) => {
             </div>,
         4 : <div>
                 <div>Would you like this checkin to be public or private?</div>
-                <RadioGroup onChange={event => props.update("help_others", event)} horizontal>
+                <RadioGroup onChange={event => props.update("checkin_privacy", event)} horizontal>
                     <RadioButton
                         rootColor="#14261430" 
                         pointColor="#6DB263" 
