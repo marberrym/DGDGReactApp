@@ -17,7 +17,7 @@ export default (path, parameters) => (BaseComponent) =>
             .then(res => res.json())
             .then(res => {
                 console.log(res);
-                if (res.error === 'jwt expired') {
+                if (res.status === 'error') {
                     localStorage.removeItem('token');
                     this.props.dispatch({type: 'ASSIGN_USER', data: {}})
                     this.setState({
