@@ -56,5 +56,6 @@ CREATE TABLE dgdg_checkins (
     self_help INTEGER NOT NULL,
     self_help_response TEXT,
     help_others INTEGER NOT NULL,
-    help_others_response TEXT
+    help_others_response TEXT,
+    checkin_privacy INTEGER NOT NULL
 );

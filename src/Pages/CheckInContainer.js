@@ -16,6 +16,7 @@ class CheckInContainer extends Component {
             self_help_response: "",
             help_others: "",
             help_others_response: "",
+            checkin_privacy: "",
         }
     }
 
@@ -32,7 +33,8 @@ class CheckInContainer extends Component {
                 self_help: this.state.self_help,
                 self_help_response: this.state.self_help_response,
                 help_others: this.state.help_others,
-                help_others_response: this.state.help_others_response
+                help_others_response: this.state.help_others_response,
+                checkin_privacy: this.state.checkin_privacy,
             }
             
             fetchReq('/checkin', {

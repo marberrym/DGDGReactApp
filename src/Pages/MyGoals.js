@@ -7,6 +7,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './tabStyles.css';
 import GoalList from '../PageComponents/GoalList';
 import { Link } from 'react-router-dom';
+import CheckinList from '../PageComponents/CheckinList';
 
 
 
@@ -102,7 +103,7 @@ class MyGoals extends Component {
                     {this.state.checkins.length === 0 ?
                         <div>You don't have check-ins with DGDG!  Let's get one started.</div>
                     :
-                        <div>Check Ins</div>
+                        this.state.checkins.map(checkin => <CheckinList checkin={checkin}/>)
                     }
                 </TabPanel>
             </Tabs>
